@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis fincas</title>
+  <link rel="stylesheet" href="../estilosUniversales/estiloMisfincas.css">
+</head>
+
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <img src="../imagenes/logo.png" alt="Logo GANAEX FINCAS" class="logo">
+    <h1>GANAEX FINCAS: MIS FINCAS</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido">
+
+    <!-- CONTENEDOR DONDE SE INSERTARÁN LAS FINCAS -->
+    <div class="enlacesFincas" id="listaFincas">
+      <!--
+        Aquí se añadirán dinámicamente los enlaces de las fincas creadas.
+        Cada finca aparecerá como:
+
+        Finca Los Claveles — Ganadería: Bovino Carne
+
+        Y será un enlace que llevará a la plantilla correspondiente
+        según el tipo de ganadería (individual, lote, extracción).
+
+        Este contenido lo generará misFincas.js automáticamente.
+      -->
+    </div>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="piePagina">
+    <p>GANAEX FINCAS V 0.1</p>
+    <a href="../inicio/index.html">Inicio</a>
+    <div class="fechaYhora"></div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../archivosUniversales/fechaYhora.js"></script>
+
+  <!-- misFincas.js debe ser módulo para poder importar funciones -->
+  <script type="module" src="misFincas.js"></script>
+
+</body>
+</html>
+

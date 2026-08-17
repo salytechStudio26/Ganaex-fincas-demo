@@ -1,0 +1,159 @@
+/* ============================================================
+   ESTILO — COPIA DE SEGURIDAD
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   ESTRUCTURA GENERAL
+------------------------------------------------------------ */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+    color: #333;
+}
+
+.cabecera {
+    background: #2c3e50;
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.cabecera img {
+    height: 60px;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 28px;
+}
+
+/* ------------------------------------------------------------
+   CONTENIDO PRINCIPAL
+------------------------------------------------------------ */
+
+.contenidoPrincipal {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* ------------------------------------------------------------
+   ZONA DE BOTONES (ASIDE)
+------------------------------------------------------------ */
+
+.zonaBotones {
+    width: 260px;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btnAccion {
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    background: #3498db;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btnAccion:hover {
+    background: #2980b9;
+}
+
+.btnAccion:active {
+    background: #1f5f82;
+}
+
+/* ------------------------------------------------------------
+   ZONA DE COPIA GENERADA
+------------------------------------------------------------ */
+
+.zonaCopiaGenerada {
+    flex: 1;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 0 8px rgba(0,0,0,0.1);
+    min-height: 300px;
+}
+
+.zonaCopiaGenerada p {
+    font-size: 18px;
+    color: #555;
+}
+
+/* ------------------------------------------------------------
+   MENSAJES DE ESTADO
+------------------------------------------------------------ */
+
+.mensajeExito {
+    background: #2ecc71;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.mensajeError {
+    background: #e74c3c;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+.mensajeInfo {
+    background: #3498db;
+    color: white;
+    padding: 12px;
+    border-radius: 6px;
+    margin-bottom: 15px;
+}
+
+/* ------------------------------------------------------------
+   FOOTER
+------------------------------------------------------------ */
+
+.piePagina {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.piePagina a {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.piePagina a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+
+@media (max-width: 900px) {
+    .contenidoPrincipal {
+        flex-direction: column;
+    }
+
+    .zonaBotones {
+        width: 100%;
+    }
+}

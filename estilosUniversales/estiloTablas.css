@@ -1,0 +1,349 @@
+/* ============================================================
+   RESET Y BASE UNIVERSAL
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F5EF; /* Beige suave */
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   CABECERA
+============================================================ */
+.cabecera {
+  background-color: #6FAF5F; /* Verde campo */
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cabecera img {
+  height: 75px;
+  width: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.cabecera h1 {
+  font-size: 1.4rem;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+============================================================ */
+.contenidoPrincipal {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 250px 1fr; /* Botones izquierda – tabla derecha */
+  gap: 20px;
+  padding: 20px;
+  overflow: visible;
+}
+
+/* ============================================================
+   ZONA DE BOTONES
+============================================================ */
+.zonaBotones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border: 2px solid #C49A6C;
+  border-radius: 10px;
+  overflow-y: auto;
+  min-width: 250px;
+  flex-shrink: 0;
+}
+
+.zonaBotones .btnAccion {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #6FAF5F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+
+  /* TÁCTIL */
+  min-height: 48px;
+  touch-action: manipulation;
+
+  transition: 0.25s ease-in-out;
+}
+
+.zonaBotones .btnAccion:hover {
+  background-color: #5A9A4F;
+  transform: translateX(4px);
+}
+
+.zonaBotones .btnAccion:active {
+  transform: scale(0.97);
+}
+
+/* ============================================================
+   TABLA PRINCIPAL
+============================================================ */
+.zonaTabla {
+  background-color: #FFFFFF;
+  border: 2px solid #C49A6C;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Contenedor con scroll */
+.table-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+/* Tabla */
+.tablaContenido {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1rem;
+  display: block;
+}
+
+/* Encabezado fijo */
+.tablaContenido thead {
+  background-color: #6FAF5F;
+  color: white;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Cuerpo con scroll */
+.tablaContenido tbody {
+  display: block;
+  max-height: 400px;
+  overflow-y: auto;
+  width: 100%;
+}
+
+.tablaContenido tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Celdas */
+.tablaContenido th,
+.tablaContenido td {
+  border: 1px solid #C49A6C;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Filas alternas */
+.tablaContenido tbody tr:nth-child(even) {
+  background-color: #F2EFE8;
+}
+
+/* Hover */
+.tablaContenido tbody tr:hover {
+  background-color: #E8FFE8;
+}
+
+/* Fila seleccionada */
+.filaSeleccionada {
+  background-color: #C8E6C9 !important;
+}
+
+/* Fila editable */
+.filaEditable td {
+  background-color: #FFFDE7;
+}
+
+/* Select dentro de tabla */
+.tablaContenido select {
+  width: 100%;
+  padding: 4px;
+  border: 1px solid #aaa;
+  background-color: white;
+}
+
+/* Nota */
+.notaCampos {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+
+/* ============================================================
+   PIE DE PÁGINA
+============================================================ */
+.piePagina {
+  background-color: #C49A6C;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  flex-shrink: 0;
+}
+
+.piePagina a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.piePagina a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+============================================================ */
+@media (max-width: 900px) {
+
+  .contenidoPrincipal {
+    grid-template-columns: 1fr; /* Botones arriba, tabla abajo */
+  }
+
+  .zonaBotones {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+  }
+
+  .zonaBotones .btnAccion {
+    width: 45%;
+    font-size: 0.95rem;
+    padding: 10px;
+  }
+
+  .zonaTabla {
+    max-height: 60vh;
+    overflow-y: auto;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    font-size: 0.9rem;
+    padding: 8px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+============================================================ */
+@media (max-width: 600px) {
+
+  .zonaBotones {
+    flex-direction: column;
+  }
+
+  .zonaBotones .btnAccion {
+    width: 100%;
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+
+  .cabecera img {
+    height: 60px;
+  }
+
+  .cabecera h1 {
+    font-size: 1.1rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS TÁCTILES (DEDOS)
+============================================================ */
+@media (pointer: coarse) {
+
+  .zonaBotones .btnAccion {
+    padding: 14px;
+    font-size: 1.15rem;
+    border-radius: 10px;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .cabecera img {
+    height: 90px;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS NO TÁCTILES (PC)
+============================================================ */
+@media (pointer: fine) {
+
+  .zonaBotones .btnAccion {
+    padding: 10px;
+    font-size: 1rem;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    padding: 8px;
+    font-size: 0.95rem;
+  }
+
+  .piePagina {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS GRANDES (PC GRANDE / TV)
+============================================================ */
+@media (min-width: 1200px) {
+
+  .cabecera img {
+    height: 110px;
+  }
+
+  .cabecera h1 {
+    font-size: 1.8rem;
+  }
+
+  .zonaBotones .btnAccion {
+    font-size: 1.2rem;
+    padding: 14px;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+}

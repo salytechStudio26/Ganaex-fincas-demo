@@ -1,0 +1,240 @@
+/* ============================================================
+   LISTADO DE FINCAS (MIS FINCAS)
+   ============================================================ */
+
+/* Contenedor donde se insertan los enlaces */
+#listaFincas {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Cada enlace de finca */
+.enlaceFinca {
+    display: block;
+    padding: 14px 18px;
+    background-color: #FFFFFF; /* Blanco limpio */
+    border: 2px solid #C49A6C; /* Marrón tierra */
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: 0.25s ease-in-out;
+}
+
+/* Hover elegante */
+.enlaceFinca:hover {
+    background-color: #E8FFE8; /* Verde muy suave */
+    border-color: #6FAF5F;     /* Verde campo */
+    transform: translateX(4px);
+}
+
+/* ============================================================
+   ICONOS SEGÚN TIPO DE GANADERÍA
+   ============================================================ */
+
+.enlaceFinca[data-tipo="individual"]::before {
+    content: "🐄  ";
+}
+
+.enlaceFinca[data-tipo="lote"]::before {
+    content: "🐑  ";
+}
+
+.enlaceFinca[data-tipo="extracción"]::before {
+    content: "🐐  ";
+}
+
+/* Si no tiene ganadería */
+.enlaceFinca[data-tipo=""]::before,
+.enlaceFinca:not([data-tipo])::before {
+    content: "🏡  ";
+}
+
+/* ============================================================
+   ESTILO GENERAL DE LA PÁGINA
+   ============================================================ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F5EF; /* Beige suave */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* ❗ Evita scroll en toda la ventana */
+}
+
+/* ============================================================
+   CABECERA (FIJA)
+   ============================================================ */
+
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: #6FAF5F; /* Verde campo */
+  color: white;
+  padding: 12px 20px;
+  flex-shrink: 0; /* ❗ Evita que se reduzca */
+}
+
+.cabecera .logo {
+  height: 75px;
+  width: auto;
+}
+
+/* ============================================================
+   CONTENIDO CENTRAL (SCROLL SOLO AQUÍ)
+   ============================================================ */
+
+.contenido {
+  flex: 1; /* ❗ Ocupa todo el espacio entre cabecera y pie */
+  overflow-y: auto; /* ❗ Scroll SOLO aquí */
+  padding: 20px 0;
+}
+
+/* ============================================================
+   PIE DE PÁGINA (FIJO)
+   ============================================================ */
+
+.piePagina {
+  background-color: #C49A6C;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  flex-shrink: 0; /* ❗ Evita que se mueva */
+}
+
+.piePagina a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.piePagina a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+   ============================================================ */
+
+@media (max-width: 900px) {
+
+  #listaFincas {
+    width: 95%;
+  }
+
+  .enlaceFinca {
+    font-size: 1rem;
+    padding: 12px;
+  }
+
+  .cabecera .logo {
+    height: 65px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+   ============================================================ */
+
+@media (max-width: 600px) {
+
+  .cabecera {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  #listaFincas {
+    width: 95%;
+    gap: 10px;
+  }
+
+  .enlaceFinca {
+    font-size: 0.95rem;
+    padding: 12px;
+  }
+
+  .piePagina {
+    flex-direction: column;
+    gap: 6px;
+    text-align: center;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS TÁCTILES (DEDOS)
+   ============================================================ */
+
+@media (pointer: coarse) {
+
+  .enlaceFinca {
+    padding: 18px;
+    font-size: 1.25rem;
+  }
+
+  .cabecera .logo {
+    height: 90px;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS NO TÁCTILES (PC)
+   ============================================================ */
+
+@media (pointer: fine) {
+
+  .enlaceFinca {
+    padding: 12px;
+    font-size: 1.05rem;
+  }
+
+  .piePagina {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS GRANDES (PC GRANDE / TV)
+   ============================================================ */
+
+@media (min-width: 1200px) {
+
+  #listaFincas {
+    width: 70%;
+  }
+
+  .cabecera .logo {
+    height: 100px;
+  }
+
+  .cabecera h1 {
+    font-size: 2rem;
+  }
+
+  .enlaceFinca {
+    font-size: 1.3rem;
+    padding: 20px;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+}

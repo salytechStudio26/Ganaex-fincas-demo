@@ -1,0 +1,287 @@
+/* ============================================================
+   ESTILOS PROFESIONALES PARA LA VENTANA DE INFORMES
+============================================================ */
+
+/* ------------------------------------------------------------
+   ESTRUCTURA GENERAL
+------------------------------------------------------------ */
+body {
+    background: #f5f7fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ------------------------------------------------------------
+   CABECERA
+------------------------------------------------------------ */
+.cabecera {
+    background: linear-gradient(90deg, #2e7d32, #1b5e20);
+    color: white;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 4px solid #145314;
+}
+
+.cabecera img {
+    height: 65px;
+}
+
+.cabecera h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* ------------------------------------------------------------
+   CONTENIDO PRINCIPAL
+------------------------------------------------------------ */
+.contenidoPrincipal {
+    display: flex;
+    gap: 25px;
+    padding: 25px;
+}
+
+/* ------------------------------------------------------------
+   ZONA DE BOTONES
+------------------------------------------------------------ */
+.zonaBotones {
+    width: 240px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.btnAccion {
+    padding: 14px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: #4caf50;
+    color: white;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btnAccion:hover {
+    background: #43a047;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------
+   ZONA DONDE SE GENERA EL INFORME
+------------------------------------------------------------ */
+.zonaInformeGenerado {
+    flex: 1;
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 18px rgba(0,0,0,0.12);
+    min-height: 350px;
+    border: 1px solid #e0e0e0;
+}
+
+.zonaInformeGenerado h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 26px;
+    color: #2c3e50;
+}
+
+.zonaInformeGenerado h3 {
+    margin-top: 25px;
+    margin-bottom: 12px;
+    font-size: 22px;
+    color: #2c3e50;
+}
+
+.zonaInformeGenerado h4 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+    font-size: 19px;
+    color: #1a5f8a;
+}
+
+.zonaInformeGenerado p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 8px;
+}
+
+/* ------------------------------------------------------------
+   PIE DE PÁGINA
+------------------------------------------------------------ */
+.piePagina {
+    background: #2e7d32;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    border-top: 4px solid #1b5e20;
+    margin-top: 25px;
+}
+
+.piePagina a {
+    color: #c8e6c9;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.piePagina a:hover {
+    text-decoration: underline;
+}
+
+/* ------------------------------------------------------------
+   MODAL INFORME AVANZADO
+------------------------------------------------------------ */
+.modal-avanzado {
+    display: none; /* Se activa desde JS */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.55);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+/* ------------------------------------------------------------
+   CONTENIDO DEL MODAL
+------------------------------------------------------------ */
+.modal-avanzado-contenido {
+    background: #ffffff;
+    padding: 30px;
+    width: 75%;
+    max-height: 85%;
+    overflow-y: auto;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.35);
+    border: 1px solid #dcdcdc;
+}
+
+.modal-avanzado-contenido h2 {
+    margin-top: 0;
+    font-size: 26px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* ------------------------------------------------------------
+   BLOQUES DE CONSULTA DINÁMICOS
+------------------------------------------------------------ */
+#bloquesConsulta {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.bloqueConsulta {
+    padding: 18px;
+    background: #eef3f7;
+    border-radius: 8px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    border: 1px solid #d0d7de;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ------------------------------------------------------------
+   BOTONES DEL MODAL
+------------------------------------------------------------ */
+.zonaBotonesModal {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.btn-verde {
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn-verde:hover {
+    background-color: #1e8449;
+    transform: translateY(-2px);
+}
+
+.btn-rojo {
+    background-color: #c0392b;
+    color: white;
+    padding: 12px 22px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+    transition: 0.25s;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+}
+
+.btn-rojo:hover {
+    background-color: #922b21;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------------------------------------
+   RESULTADO DEL INFORME AVANZADO
+------------------------------------------------------------ */
+#resultadoInforme {
+    margin-top: 30px;
+}
+
+/* ------------------------------------------------------------
+   RESPONSIVE
+------------------------------------------------------------ */
+@media (max-width: 900px) {
+    .contenidoPrincipal {
+        flex-direction: column;
+    }
+
+    .zonaBotones {
+        width: 100%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .zonaBotones .btnAccion {
+        width: 45%;
+    }
+
+    .modal-avanzado-contenido {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .zonaBotones .btnAccion {
+        width: 100%;
+    }
+
+    .zonaInformeGenerado {
+        padding: 20px;
+    }
+
+    .modal-avanzado-contenido {
+        width: 95%;
+    }
+}

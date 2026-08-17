@@ -1,0 +1,90 @@
+/* ============================================================
+   ESTILO PROFESIONAL PARA INFORMES E HISTORIALES
+   ============================================================ */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor general del informe */
+#contenedorInformes {
+    background: #ffffff;
+    padding: 25px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+/* Títulos principales */
+#contenedorInformes h2 {
+    font-size: 28px;
+    color: #2a7a3b;
+    margin-bottom: 10px;
+    border-bottom: 3px solid #2a7a3b;
+    padding-bottom: 5px;
+}
+
+/* Subtítulos */
+#contenedorInformes h3 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+/* Secciones */
+#contenedorInformes h4 {
+    font-size: 20px;
+    color: #1a5f8a;
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+/* Texto general */
+#contenedorInformes p {
+    font-size: 16px;
+    color: #444;
+    margin: 5px 0;
+}
+
+/* Línea separadora */
+#contenedorInformes hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+/* Bloques de eventos */
+.evento-bloque {
+    background: #f0f7ff;
+    border-left: 5px solid #1a5f8a;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+/* Etiquetas */
+strong {
+    color: #222;
+}
+
+/* Botón nuevo informe */
+#btnNuevoInforme {
+    background: #2a7a3b;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 20px;
+}
+
+#btnNuevoInforme:hover {
+    background: #256b34;
+}

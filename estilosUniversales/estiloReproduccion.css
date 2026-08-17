@@ -1,0 +1,249 @@
+/* ============================================================
+   BASE GENERAL
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F4F4F4;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   CABECERA PROFESIONAL
+============================================================ */
+.cabecera {
+  background: linear-gradient(135deg, #6FAF5F, #4E8C45);
+  color: white;
+  padding: 25px;
+  text-align: center;
+  border-bottom: 4px solid #C49A6C;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.15);
+}
+
+.cabecera img {
+  height: 85px;
+  margin-bottom: 12px;
+}
+
+.cabecera h1 {
+  font-size: 1.7rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   LAYOUT PRINCIPAL: BOTONES IZQUIERDA + TABLAS DERECHA
+============================================================ */
+.contenidoPrincipal {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 260px 1fr; /* ⭐ Botones izquierda, tablas derecha */
+  gap: 25px;
+  padding: 20px;
+}
+
+/* ============================================================
+   BOTONES EN COLUMNA IZQUIERDA
+============================================================ */
+.zonaBotones {
+  background-color: #FFFFFF;
+  border: 2px solid #C49A6C;
+  border-radius: 12px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column; /* ⭐ Botones en columna */
+  gap: 12px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+.btnAccion {
+  padding: 12px 18px;
+  font-size: 1rem;
+  background-color: #6FAF5F;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.25s ease;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btnAccion:hover {
+  background-color: #5A9A4F;
+  transform: translateX(4px);
+}
+
+.btnAccion:active {
+  transform: scale(0.97);
+}
+
+/* ============================================================
+   ZONA TABLAS — DOS TABLAS EN HORIZONTAL
+============================================================ */
+.zonaTablas {
+  flex: 1;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* ⭐ Dos columnas */
+  gap: 25px;
+}
+
+/* Bloque de cada tabla */
+.bloqueTabla {
+  background-color: #FFFFFF;
+  border: 2px solid #C49A6C;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Título de cada tabla */
+.tituloTabla {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #4E8C45;
+  margin-bottom: 12px;
+  text-align: center;
+  border-bottom: 2px solid #C49A6C;
+  padding-bottom: 6px;
+}
+
+/* ============================================================
+   TABLAS PROFESIONALES
+============================================================ */
+
+/* ⭐ CABECERAS AJUSTABLES EN VARIAS LÍNEAS */
+.tablaContenido th {
+  padding: 8px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border-right: 1px solid #C49A6C;
+
+  /* ⭐ Ajuste de texto estilo Excel */
+  white-space: normal;
+  word-wrap: break-word;
+  line-height: 1.2;
+  text-align: center;
+}
+
+/* Encabezado */
+.tablaContenido thead {
+  background-color: #6FAF5F;
+  color: white;
+}
+
+/* Cuerpo con alineación perfecta */
+.tablaContenido tbody {
+  display: block;
+  max-height: 350px;
+  overflow-y: auto;
+}
+
+.tablaContenido thead tr,
+.tablaContenido tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed; /* ⭐ Alineación perfecta */
+}
+
+.tablaContenido td {
+  padding: 8px;
+  font-size: 0.85rem;
+  border-bottom: 1px solid #E0D8C8;
+  border-right: 1px solid #E0D8C8;
+  text-align: center;
+}
+
+/* Filas alternas */
+.tablaContenido tbody tr:nth-child(even) {
+  background-color: #F7F4EE;
+}
+
+/* Hover */
+.tablaContenido tbody tr:hover {
+  background-color: #E8FFE8;
+}
+
+/* Fila seleccionada */
+.filaSeleccionada {
+  background-color: #C8E6C9 !important;
+}
+
+/* Fila editable */
+.filaEditableModificar td {
+  background-color: #FFFDE7;
+}
+
+/* ============================================================
+   PIE DE PÁGINA PROFESIONAL
+============================================================ */
+.piePagina {
+  background: linear-gradient(135deg, #C49A6C, #A67E52);
+  color: white;
+  padding: 15px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  box-shadow: 0px -3px 8px rgba(0,0,0,0.15);
+}
+
+.piePagina a {
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.piePagina a:hover {
+  text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+============================================================ */
+@media (max-width: 1200px) {
+  .zonaTablas {
+    grid-template-columns: 1fr; /* ⭐ Una tabla encima de otra */
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+============================================================ */
+@media (max-width: 700px) {
+
+  .contenidoPrincipal {
+    grid-template-columns: 1fr; /* ⭐ Botones arriba en móvil */
+  }
+
+  .zonaBotones {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .btnAccion {
+    width: 48%;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    font-size: 0.75rem;
+    padding: 5px;
+  }
+
+  .tituloTabla {
+    font-size: 1.1rem;
+  }
+}

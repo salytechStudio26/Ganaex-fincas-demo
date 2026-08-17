@@ -1,0 +1,187 @@
+/* ============================================================
+   RESET Y BASE UNIVERSAL
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F4F1EA;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   CABECERA
+============================================================ */
+.cabecera {
+  background-color: #3A7D44;
+  color: white;
+  padding: 14px 22px;
+  text-align: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+}
+
+.cabecera img {
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.cabecera h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL (BOTONES + TABLA)
+============================================================ */
+.contenidoPrincipal {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ============================================================
+   ZONA DE BOTONES
+============================================================ */
+.zonaBotones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border: 2px solid #C9A66B;
+  border-radius: 10px;
+  overflow-y: auto;
+  min-width: 250px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+.zonaBotones .btnAccion {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #3A7D44;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 48px;
+  transition: 0.25s ease-in-out;
+}
+
+.zonaBotones .btnAccion:hover {
+  background-color: #2F5D34;
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   TEXTO FUERA DEL PANEL DE BOTONES
+============================================================ */
+.notaCampos {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #444;
+  padding-left: 5px;
+}
+
+/* ============================================================
+   TABLA PRINCIPAL (ALINEADA CORRECTAMENTE)
+============================================================ */
+.zonaTabla {
+  background-color: #FFFFFF;
+  border: 2px solid #C9A66B;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+}
+
+/* Scroll en el contenedor, NO en tbody */
+.table-container {
+  width: 100%;
+  overflow-y: auto;
+  max-height: 400px;
+}
+
+.tablaContenido {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed; /* Alineación perfecta */
+}
+
+.tablaContenido thead {
+  background-color: #3A7D44;
+  color: white;
+}
+
+.tablaContenido th,
+.tablaContenido td {
+  border: 1px solid #C9A66B;
+  padding: 10px;
+  text-align: center;
+}
+
+.tablaContenido tbody tr:nth-child(even) {
+  background-color: #F4F1EA;
+}
+
+/* ============================================================
+   PIE DE PÁGINA
+============================================================ */
+.piePagina {
+  background-color: #C9A66B;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  box-shadow: 0 -2px 6px rgba(0,0,0,0.25);
+}
+
+/* ============================================================
+   PANTALLAS GRANDES (12" EN ADELANTE)
+============================================================ */
+@media (min-width: 1280px) {
+
+  html, body {
+    overflow-y: hidden;
+  }
+
+  .contenidoPrincipal {
+    height: calc(100vh - 160px);
+    overflow: hidden;
+  }
+
+  .zonaBotones {
+    overflow-y: auto;
+    max-height: calc(100vh - 200px);
+  }
+
+  .table-container {
+    max-height: calc(100vh - 260px);
+  }
+}
+
+/* ============================================================
+   PANTALLAS PEQUEÑAS (<12")
+============================================================ */
+@media (max-width: 1279px) {
+  html, body {
+    overflow-y: auto;
+  }
+}
+
+/* ⭐ Fila seleccionada en Recogida */
+.filaSeleccionada {
+    background-color: #8be88b !important;   /* verde suave */
+    color: #000;
+}

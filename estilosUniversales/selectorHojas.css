@@ -1,0 +1,100 @@
+/* ============================================================
+   ESTILOS PARA SELECTOR DE HOJAS Y SELECTOR DE COLUMNAS
+   ============================================================ */
+
+/* Fondo de la ventana modal */
+.selector-hojas,
+.selector-columnas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(3px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    z-index: 9999;
+}
+
+/* Contenedor interno */
+.selector-hojas > div,
+.selector-columnas > div {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+
+    width: 90%;
+    max-width: 450px;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
+
+    text-align: center;
+    font-family: Arial, sans-serif;
+
+    animation: aparecer 0.25s ease-out;
+}
+
+/* Título */
+.selector-hojas h3,
+.selector-columnas h3 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Botones */
+.selector-hojas button,
+.selector-columnas button {
+    display: block;
+    width: 100%;
+    padding: 12px;
+
+    margin: 8px 0;
+
+    background: #0078d4;
+    color: white;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+/* Hover (ratón) */
+.selector-hojas button:hover,
+.selector-columnas button:hover {
+    background: #005fa3;
+}
+
+/* Activo (táctil) */
+.selector-hojas button:active,
+.selector-columnas button:active {
+    background: #004c82;
+}
+
+/* Accesibilidad teclado */
+.selector-hojas button:focus,
+.selector-columnas button:focus {
+    outline: 3px solid #80bfff;
+}
+
+/* Animación */
+@keyframes aparecer {
+    from {
+        transform: scale(0.85);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}

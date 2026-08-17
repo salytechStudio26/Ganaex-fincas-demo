@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Extracción diaria</title>
+
+    <link rel="stylesheet" href="../../../../estilosUniversales/estiloVentanaTablas.css">
+
+    <style>
+        /* ⭐ Estilo profesional para el filtro */
+        .filtroOrden {
+            padding: 8px 12px;
+            margin-bottom: 15px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            background: #f8f8f8;
+            cursor: pointer;
+        }
+
+        .labelFiltro {
+            font-size: 15px;
+            font-weight: bold;
+            margin-right: 10px;
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        .zonaTabla {
+            width: 100%;
+        }
+
+        .table-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="cabecera">
+        <img src="../../../../imagenes/logo.png" alt="Logo de la aplicación">
+        <h1>REGISTRO DIARIO DE EXTRACCIÓN DE MATERIA PRIMA</h1>
+    </header>
+
+    <main class="contenidoPrincipal">
+
+        <!-- ============================================================
+             ZONA DE BOTONES
+        ============================================================ -->
+        <aside class="zonaBotones">
+            <button id="btnNuevoEstado" class="btnAccion">Nuevo registro</button>
+            <button id="btnGuardarEstado" class="btnAccion">Guardar</button>
+            <button id="btnCopiar" class="btnAccion">Copiar</button>
+            <button id="btnPegar" class="btnAccion">Pegar</button>
+            <button id="btnModificarEstado" class="btnAccion">Modificar</button>
+            <button id="btnSeleccionarEstado" class="btnAccion">Seleccionar</button>
+            <button id="btnEliminarEstado" class="btnAccion">Eliminar</button>
+        </aside>
+
+        <!-- ============================================================
+             ZONA DE TABLA + FILTRO
+        ============================================================ -->
+        <section class="zonaTabla">
+
+            <!-- ⭐ Filtro de ordenación accesible -->
+            <label for="filtroOrdenExtraccion" class="labelFiltro">Ordenar por:</label>
+            <select id="filtroOrdenExtraccion" name="filtros" class="filtroOrden">
+                <option value="idAsc">ID ascendente (antiguos arriba)</option>
+                <option value="idDesc">ID descendente (nuevos arriba)</option>
+                <option value="fechaAsc">Fecha ascendente</option>
+                <option value="fechaDesc">Fecha descendente</option>
+                <option value="identAsc">Identificación A-Z</option>
+                <option value="identDesc">Identificación Z-A</option>
+                <option value="loteAsc">Lote A-Z</option>
+                <option value="loteDesc">Lote Z-A</option>
+            </select>
+
+            <div class="table-container">
+                <table id="tablaExtraccion" class="tablaContenido">
+                    <thead>
+                        <tr>
+                            <th data-columna="idHeredado">ID Heredado*</th>
+                            <th data-columna="identificacion">Nº Identificación*</th>
+                            <th data-columna="lote">Nº Lote*</th>
+                            <th data-columna="fecha">Fecha diaria</th>
+                            <th data-columna="tipo">Tipo (kilos o litros)</th>
+                            <th data-columna="cantidadRecogida">Cantidad recogida</th>
+                            <th data-columna="zona">Zona</th>
+                            <th data-columna="observaciones">Observaciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody class="listadoRegistrosTabla"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <p class="notaCampos">Las columnas con * son obligatorias</p>
+    </main>
+
+    <footer class="piePagina">
+        <div class="fechaYhora"></div>
+
+        <a href="../../MenúPrincipal/menuPrincipalIndividual.html">Menú Principal</a>
+        <a href="../../../../misFincas/misFincas.html">Mis Fincas</a>
+        <a href="../../../../inicio/index.html">Inicio</a>
+    </footer>
+
+    <!-- LIBRERÍAS EXTERNAS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.25/jspdf.plugin.autotable.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!-- SCRIPTS UNIVERSALES -->
+    <script type="module" src="../../../../archivosUniversales/controladorEventos.js"></script>
+    <script src="../../../../archivosUniversales/fechaYhora.js"></script>
+
+    <!-- script de la base de datos y el controlador -->
+    <script type="module" src="extraccionDemoBD.js"></script>
+    <script type="module" src="extraccionDemo.js"></script>
+
+</body>
+</html>

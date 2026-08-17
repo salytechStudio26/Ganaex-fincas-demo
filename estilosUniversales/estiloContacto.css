@@ -1,0 +1,171 @@
+/* ===========================
+   ESTILO GENERAL
+   =========================== */
+
+body {
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* ===========================
+   CABECERA
+   =========================== */
+
+.cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(135deg, #004aad, #0078d7);
+    color: #fff;
+    padding: 1.5rem;
+}
+
+.cabecera img {
+    height: 60px;
+}
+
+.cabecera h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* ===========================
+   CONTENEDOR PRINCIPAL
+   =========================== */
+
+.planesPago {
+    max-width: 1000px;
+    margin: auto;
+    padding: 2rem;
+}
+
+/* ===========================
+   SECCIÓN SOBRE NOSOTROS
+   =========================== */
+
+.SobreNosotros {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.SobreNosotros h2 {
+    color: #004aad;
+    margin-bottom: 1rem;
+}
+
+.SobreNosotros p {
+    line-height: 1.6;
+}
+
+/* ===========================
+   SECCIÓN INFORMACIÓN
+   =========================== */
+
+.infoPlanes {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+}
+
+.infoPlanes h2 {
+    color: #004aad;
+    margin-bottom: 1rem;
+}
+
+.infoPlanes p {
+    line-height: 1.6;
+}
+
+.avisoImportante {
+    background: #e9f0f8;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 1.5rem;
+    border-left: 4px solid #004aad;
+}
+
+/* ===========================
+   FORMULARIO DE CONTACTO
+   =========================== */
+
+.formularioContacto {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.formularioContacto h3 {
+    color: #004aad;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.formularioContacto label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+}
+
+.formularioContacto input,
+.formularioContacto textarea {
+    width: 100%;
+    padding: 0.7rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    margin-top: 0.3rem;
+    font-size: 0.95rem;
+}
+
+.formularioContacto textarea {
+    resize: vertical;
+}
+
+.formularioContacto button {
+    margin-top: 1.5rem;
+    width: 100%;
+    background-color: #0078d7;
+    color: #fff;
+    border: none;
+    padding: 0.9rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.formularioContacto button:hover {
+    background-color: #005fa3;
+}
+
+/* ===========================
+   PIE DE PÁGINA
+   =========================== */
+
+.piePagina {
+    background-color: #004aad;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+}
+
+.piePagina a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.piePagina a:hover {
+    text-decoration: underline;
+}

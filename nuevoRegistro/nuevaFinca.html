@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nueva Finca</title>
+  <link rel="stylesheet" href="../estilosUniversales/estiloFormulario.css">
+</head>
+
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <img src="../imagenes/logo.png" alt="Logo GANAEX FINCAS" class="logo">
+    <h1>GANAEX FINCAS</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido">
+
+    <form id="formNuevoRegistro">
+
+      <!-- CAMPO OCULTO PARA EDITAR FINCAS -->
+      <input type="hidden" id="idFinca">
+
+      <!-- DATOS DEL USUARIO -->
+      <fieldset class="datosUsuario">
+        <legend>Datos del usuario</legend>
+
+        <label for="dni">DNI:*</label>
+        <input id="dni" type="text" placeholder="00000000X" required>
+
+        <label for="nombre">Nombre:*</label>
+        <input id="nombre" type="text" placeholder="Juan Romero" required>
+
+        <label for="telefono">Teléfono</label>
+        <input id="telefono" type="text" placeholder="600100200">
+
+        <label for="correo">E-mail</label>
+        <input id="correo" type="email" placeholder="correo@electronico.es">
+      </fieldset>
+
+      <!-- DATOS DE LA FINCA -->
+      <fieldset class="datosFinca">
+        <legend>Datos de la finca</legend>
+
+        <label for="extension">Nº Extensión*</label>
+        <input id="extension" type="text" placeholder="Ex0001" required>
+
+        <p class="nota">Si no sabes el código de la extensión, inventa un código único e irrepetible.</p>
+
+        <label for="nombreFinca">Nombre finca</label>
+        <input id="nombreFinca" type="text" placeholder="Finca Los Claveles">
+
+        <label for="direccion">Dirección</label>
+        <input id="direccion" type="text" placeholder="carretera primera curva, parcela 5">
+      </fieldset>
+
+      <!-- DATOS DE GANADERÍA -->
+      <fieldset class="datosGanaderia">
+        <legend>Datos de la ganadería</legend>
+
+        <label for="tipoGanaderia">Tipo ganadería*</label>
+        <select id="tipoGanaderia" name="tipoGanaderia">
+          <option value="individual">Individual</option>
+          <option value="lote">Lote</option>
+        </select>
+
+        <label for="clase">Clase ganadería*</label>
+        <input id="clase" type="text" placeholder="bovino carne, caprino leche...">
+      </fieldset>
+
+      <p class="obligatorios">Todos los campos con * son obligatorios.</p>
+
+      <!-- BOTONES DEL FORMULARIO -->
+      <div class="botonesFormulario">
+        <!-- CORREGIDO: type="button" -->
+        <button type="button" class="crear">Crear nueva finca</button>
+        <button type="button" class="eliminarGanaderia">Eliminar ganadería</button>
+      </div>
+
+    </form>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="piePagina">
+    <p>GANAEX FINCAS V 0.1</p>
+    <a href="../inicio/index.html">Inicio</a>
+    <div class="fechaYhora"></div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="../archivosUniversales/fechaYhora.js"></script>
+
+  <!-- BD primero -->
+  <script type="module" src="nuevaFincaDemoBD.js"></script>
+
+  <!-- Controlador del formulario -->
+  <script type="module" src="nuevaFinca.js"></script>
+
+</body>
+</html>

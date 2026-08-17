@@ -1,0 +1,210 @@
+/* ============================================================
+   RESET Y BASE UNIVERSAL (heredado del estilo principal)
+============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F5EF;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ============================================================
+   CABECERA (igual que el estilo principal)
+============================================================ */
+.cabecera {
+  background-color: #6FAF5F;
+  color: white;
+  padding: 12px 20px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.cabecera img {
+  height: 75px;
+  width: auto;
+  display: block;
+  margin: 0 auto 10px auto;
+}
+
+.cabecera h1 {
+  font-size: 1.4rem;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL — ADAPTADO A DOS TABLAS LADO A LADO
+============================================================ */
+.contenidoPrincipal {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 250px 1fr;
+  gap: 20px;
+  padding: 20px;
+}
+
+/* ============================================================
+   ZONA DE BOTONES (igual que el estilo principal)
+============================================================ */
+.zonaBotones {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background-color: #FFFFFF;
+  padding: 15px;
+  border: 2px solid #C49A6C;
+  border-radius: 10px;
+  overflow-y: auto;
+  min-width: 250px;
+}
+
+.zonaBotones .btnAccion {
+  padding: 12px;
+  font-size: 1rem;
+  background-color: #6FAF5F;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  min-height: 48px;
+  transition: 0.25s ease-in-out;
+}
+
+.zonaBotones .btnAccion:hover {
+  background-color: #5A9A4F;
+  transform: translateX(4px);
+}
+
+.zonaBotones .btnAccion:active {
+  transform: scale(0.97);
+}
+
+/* ============================================================
+   ZONA DE TABLAS — DOS TABLAS LADO A LADO
+============================================================ */
+.zonaTablasLotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Dos columnas */
+  gap: 20px;
+  align-items: start;
+}
+
+/* ============================================================
+   TABLAS — ADAPTADAS A DOS COLUMNAS
+============================================================ */
+.tablaContenido {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #FFFFFF;
+  border: 2px solid #C49A6C;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* Encabezado */
+.tablaContenido thead {
+  background-color: #6FAF5F;
+  color: white;
+}
+
+.tablaContenido th,
+.tablaContenido td {
+  border: 1px solid #C49A6C;
+  padding: 10px;
+  text-align: center;
+}
+
+/* Cuerpo con scroll */
+.tablaContenido tbody {
+  max-height: 350px;
+  overflow-y: auto;
+  display: block;
+}
+
+.tablaContenido tbody tr {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+}
+
+/* Filas alternas */
+.tablaContenido tbody tr:nth-child(even) {
+  background-color: #F2EFE8;
+}
+
+/* Hover */
+.tablaContenido tbody tr:hover {
+  background-color: #E8FFE8;
+}
+
+/* Fila seleccionada */
+.filaSeleccionada {
+  background-color: #C8E6C9 !important;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+============================================================ */
+@media (max-width: 900px) {
+
+  .contenidoPrincipal {
+    grid-template-columns: 1fr;
+  }
+
+  .zonaTablasLotes {
+    grid-template-columns: 1fr;
+  }
+
+  .tablaContenido tbody {
+    max-height: 300px;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+============================================================ */
+@media (max-width: 600px) {
+
+  .zonaBotones {
+    flex-direction: column;
+  }
+
+  .zonaTablasLotes {
+    grid-template-columns: 1fr;
+  }
+
+  .tablaContenido th,
+  .tablaContenido td {
+    font-size: 0.85rem;
+    padding: 6px;
+  }
+}
+
+/* ============================================================
+   PIE DE PÁGINA (igual que el estilo principal)
+============================================================ */
+.piePagina {
+  background-color: #C49A6C;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+}
+
+.piePagina a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.piePagina a:hover {
+  text-decoration: underline;
+}

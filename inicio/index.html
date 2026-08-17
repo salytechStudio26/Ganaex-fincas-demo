@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio</title>
+
+  <!-- Estilos -->
+  <link rel="stylesheet" href="estiloInicio.css">
+
+  <!-- Manifest PWA -->
+  <link rel="manifest" href="../manifest.json">
+
+  <!-- Icono para iOS -->
+  <link rel="apple-touch-icon" href="../imagenes/logo.png">
+</head>
+
+<body>
+
+  <!-- CABECERA -->
+  <header class="cabecera">
+    <img src="../imagenes/logo.png" alt="Logo GANAEX FINCAS" class="logo">
+    <h1>GANAEX FINCAS</h1>
+  </header>
+
+  <!-- CONTENIDO PRINCIPAL -->
+  <main class="contenido">
+
+    <section class="zonaIzquierda">
+      <img src="../imagenes/principal.png" alt="Imagen principal" class="imagen-principal">
+    </section>
+
+    <nav class="menuPrincipal">
+      <a href="../nuevoRegistro/nuevaFinca.html">Nueva finca</a>
+      <a href="../misFincas/misFincas.html">Mis fincas</a>
+      <a href="../ayuda/Configuracion.html">Configuración</a>
+    </nav>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer class="piePagina">
+    <p>GANAEX FINCAS V 0.1</p>
+    <div class="fechaYhora"></div>
+  </footer>
+
+  <!-- Scripts UNIVERSALES -->
+  <script src="../archivosUniversales/controladorEventos.js"></script>
+  <script src="../archivosUniversales/fechaYhora.js"></script>
+
+  <!-- Activar eventos táctiles universales -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+
+      const enlaces = document.querySelectorAll(".menuPrincipal a");
+
+      enlaces.forEach(enlace => {
+        addUniversalListener(enlace, () => {
+          window.location.href = enlace.getAttribute("href");
+        });
+      });
+
+    });
+  </script>
+
+  <!-- Registro del Service Worker -->
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("../service-worker.js");
+    }
+  </script>
+
+</body>
+</html>

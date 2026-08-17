@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ganaex-fincas demo</title>
+
+    <!-- MANIFEST PWA -->
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="./estilosUniversales/estiloMenuPrincipal.css">
+</head>
+<body>
+
+    <header class="cabecera">
+        <img src="./imagenes/logo.png" alt="logo">
+        <h1>GANAEX-FINCAS DEMO</h1>
+    </header>
+
+    <main class="contenido">
+        <div class="imagenPrincipal">
+            <img src="./imagenes/principal.png" alt="principal">
+        </div>
+
+        <div class="accesoMenu">
+            <a href="./inicio/index.html">Menú Inicial</a>
+
+            <!-- BOTÓN DE INSTALACIÓN PWA -->
+            <button id="btnInstalar" style="display:none;">
+                Instalar aplicación
+            </button>
+        </div>
+    </main>
+
+    <footer class="piePagina">
+        <p>GANAEX FINCAS V 0.1</p>
+        <div class="fechaYhora"></div>
+    </footer>
+
+    <!-- SCRIPTS UNIVERSALES -->
+    <script src="./archivosUniversales/controladorEventos.js"></script>
+    <script src="./archivosUniversales/fechaYhora.js"></script>
+
+    <!-- INSTALADOR PWA -->
+    <script src="./archivosUniversales/instaladorPWA.js"></script>
+
+    <!-- REGISTRO DEL SERVICE WORKER -->
+    <script>
+    if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("service-worker.js");
+    }
+    </script>
+
+</body>
+</html>
+

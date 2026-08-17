@@ -1,0 +1,208 @@
+/* ============================================================
+   RESETEO GENERAL
+   ============================================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #F7F5EF; /* Beige suave */
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita scroll */
+}
+
+/* ============================================================
+   CABECERA
+   ============================================================ */
+.cabecera {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  background-color: #6FAF5F; /* Verde campo suave */
+  color: white;
+  padding: 12px 20px;
+  flex-shrink: 0;
+}
+
+.cabecera .logo {
+  height: 95px;
+  width: auto;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+   ============================================================ */
+.contenido {
+  flex: 1;
+  display: flex;
+  padding: 10px;
+  gap: 15px;
+  overflow: hidden;
+}
+
+/* Imagen izquierda */
+.zonaIzquierda {
+  flex: 2;
+  height: 100%;
+}
+
+.imagen-principal {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* ============================================================
+   MENÚ PRINCIPAL
+   ============================================================ */
+.menuPrincipal {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  padding-right: 10px;
+}
+
+.menuPrincipal a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 15px;
+  background-color: #6FAF5F;
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.menuPrincipal a:hover {
+  background-color: #8BCB7A;
+}
+
+/* ============================================================
+   PIE DE PÁGINA
+   ============================================================ */
+.piePagina {
+  background-color: #C49A6C;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 20px;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+   ============================================================ */
+@media (max-width: 900px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  .zonaIzquierda {
+    height: 40vh;
+  }
+
+  .menuPrincipal {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .menuPrincipal a {
+    width: 30%;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+   ============================================================ */
+@media (max-width: 600px) {
+  .cabecera {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .contenido {
+    flex-direction: column;
+  }
+
+  .zonaIzquierda {
+    height: 30vh;
+  }
+
+  .menuPrincipal {
+    flex-direction: column;
+  }
+
+  .menuPrincipal a {
+    width: 90%;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS TÁCTILES (DEDOS)
+   ============================================================ */
+@media (pointer: coarse) {
+
+  .menuPrincipal a {
+    padding: 20px;
+    font-size: 1.35rem;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+
+  .cabecera .logo {
+    height: 110px;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS NO TÁCTILES (PC)
+   ============================================================ */
+@media (pointer: fine) {
+
+  .menuPrincipal a {
+    padding: 12px;
+    font-size: 1.1rem;
+  }
+
+  .piePagina {
+    font-size: 0.85rem;
+  }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS GRANDES (PC GRANDE / TV)
+   ============================================================ */
+@media (min-width: 1200px) {
+
+  .cabecera .logo {
+    height: 120px;
+  }
+
+  .cabecera h1 {
+    font-size: 2.2rem;
+  }
+
+  .menuPrincipal a {
+    font-size: 1.4rem;
+    padding: 18px;
+  }
+
+  .piePagina {
+    font-size: 1rem;
+  }
+}

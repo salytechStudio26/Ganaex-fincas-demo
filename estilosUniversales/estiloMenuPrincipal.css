@@ -1,0 +1,239 @@
+/* ============================================================
+   RESET Y BASE UNIVERSAL
+============================================================ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f5f5f5;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+/* ============================================================
+   CABECERA
+============================================================ */
+.cabecera {
+    width: 100%;
+    background-color: #2a4d69;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.cabecera img {
+    width: 80px;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+.cabecera h1 {
+    font-size: 1.4rem;
+    padding: 0.5rem;
+}
+
+/* ============================================================
+   CONTENIDO PRINCIPAL
+============================================================ */
+.contenidoPrincipal {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Imagen principal */
+.imagenIndividuales img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    margin-bottom: 1rem;
+    border-radius: 10px;
+}
+
+
+/* ============================================================
+   MENÚ PRINCIPAL
+============================================================ */
+.menuPrincipal {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+}
+
+.menuPrincipal a {
+    display: block;
+    background-color: #4b86b4;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 1rem;
+
+    /* TÁCTIL */
+    min-height: 48px;
+    touch-action: manipulation;
+
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.menuPrincipal a:hover {
+    background-color: #3a6f92;
+}
+
+.menuPrincipal a:active {
+    background-color: #2a4d69;
+    transform: scale(0.97);
+}
+
+#btnInstalar {
+    display: none;
+    margin-top: 15px;
+}
+
+
+/* ============================================================
+   PIE DE PÁGINA
+============================================================ */
+.piePagina {
+    width: 100%;
+    background-color: #2a4d69;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.piePagina a {
+    color: white;
+    text-decoration: none;
+    margin: 0 1rem;
+    font-size: 1rem;
+}
+
+.piePagina a:hover {
+    text-decoration: underline;
+}
+
+/* ============================================================
+   RESPONSIVE — TABLETS
+============================================================ */
+@media (max-width: 768px) {
+
+    .cabecera h1 {
+        font-size: 1.2rem;
+    }
+
+    .menuPrincipal {
+        grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+        gap: 0.8rem;
+    }
+
+    .menuPrincipal a {
+        font-size: 0.9rem;
+        padding: 0.8rem;
+    }
+
+    .imagenIndividuales img {
+        max-width: 300px;
+    }
+}
+
+/* ============================================================
+   RESPONSIVE — MÓVILES
+============================================================ */
+@media (max-width: 480px) {
+
+    .cabecera img {
+        width: 60px;
+    }
+
+    .cabecera h1 {
+        font-size: 1rem;
+    }
+
+    .menuPrincipal {
+        grid-template-columns: 1fr;
+    }
+
+    .menuPrincipal a {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .imagenIndividuales img {
+        max-width: 250px;
+    }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS TÁCTILES (DEDOS)
+============================================================ */
+@media (pointer: coarse) {
+
+    .menuPrincipal a {
+        padding: 1.3rem;
+        font-size: 1.2rem;
+        border-radius: 12px;
+    }
+
+    .cabecera img {
+        width: 95px;
+    }
+
+    .piePagina {
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS NO TÁCTILES (PC)
+============================================================ */
+@media (pointer: fine) {
+
+    .menuPrincipal a {
+        padding: 0.9rem;
+        font-size: 1rem;
+    }
+
+    .piePagina {
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================================
+   ADAPTACIÓN A PANTALLAS GRANDES (PC GRANDE / TV)
+============================================================ */
+@media (min-width: 1200px) {
+
+    .cabecera img {
+        width: 110px;
+    }
+
+    .cabecera h1 {
+        font-size: 1.8rem;
+    }
+
+    .menuPrincipal a {
+        font-size: 1.3rem;
+        padding: 1.4rem;
+    }
+
+    .piePagina {
+        font-size: 1.1rem;
+    }
+}
