@@ -1,0 +1,26 @@
+{
+  "name": "Ganaex Fincas Demo",
+  "short_name": "Ganaex Demo",
+  "description": "Versión demostrativa de la aplicación GANAEX-FINCAS.",
+  "lang": "es-ES",
+
+  "start_url": "/ganaex-fincas-demo/index.html",
+  "scope": "/ganaex-fincas-demo/",
+  "display": "standalone",
+
+  "background_color": "#ffffff",
+  "theme_color": "#2e7d32",
+
+  "icons": [
+    {
+      "src": "imagenes/logo.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "imagenes/logo.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
